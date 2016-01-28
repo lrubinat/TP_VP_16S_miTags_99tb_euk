@@ -117,21 +117,21 @@ Let's check out how many OTUs don't appear in the new table:
 length(which(colSums(tp_16mt_e_ss167)==0)) 
 ```
 
-There are 3854 OTUs that don't show any occurrence in the normalized data. Let's remove them from the table and take a look at its final dimensions:
+There are 3864 OTUs that don't show any occurrence in the normalized data. Let's remove them from the table and take a look at its final dimensions:
 
 ```{r species_richness_rarefaction5, echo=1:3}
 tp_16mt_e_ss167_no_cero<-tp_16mt_e_ss167[,-(which(colSums(tp_16mt_e_ss167)==0))]
 dim(tp_16mt_e_ss167_no_cero)
 
-#The final dimensions of the normalized table are  220 3352.
-#3352+3854 = 7206
+#The final dimensions of the normalized table are  220 3342.
+#3342+3864 = 7206
 ```
 
 Datasets summary:
 
 tp_vp_16SmiTags_e_v2_t --> 220 7206
 
-tp_16mt_e_ss167_no_cero --> 220 3352
+tp_16mt_e_ss167_no_cero --> 220 3342
 
 
 # 3) General community analysis
@@ -189,13 +189,13 @@ plot(sort(pielou_evenness_tp_16mt_e_ss167), pch=19)
 boxplot(pielou_evenness_tp_16mt_e_ss167, pch=19)
 ```
 
-The OTU_97, with 920 reads, is the most abundant in the overall dataset:
+The OTU_97, with 868 reads, is the most abundant in the overall dataset:
 
 ```{r OTUs_overall_abundance, echo=TRUE}
 head(sort(colSums(tp_16mt_e_ss167_no_cero), decreasing=T), n=10L)
 ```
 
-Most of the OTUs show few occurrences, and we probably will be able to identify a certain amount of rare OTUs:
+Most of the OTUs show few occurrences, but we might not be able to identify a significant amount of rare OTUs:
 
 ```{r OTUs_overall_abundance2, echo=TRUE}
 plot(log(sort(colSums(tp_16mt_e_ss167_no_cero), decreasing=T)), pch=19)
@@ -474,7 +474,7 @@ Proportion of regionally abundant OTUs (%):
 
 ```{r abundant_OTUs2, echo=F}
 #there are 84 regionally abundant OTUs.
-(208/3344)*100 # = 6.22% of the OTUs are regionally abundant
+(215/3342)*100 # = 6.22% of the OTUs are regionally abundant
 
 #length(row.names(otu_tb16_ss5000_rabund_percoccur[otu_tb16_cc_ss5000_rabund_percoccur$mean_rabund > 0.001,])) # 83 OTUs
 #row.names(otu_tb16_ss5000_rabund_percoccur[otu_tb16_cc_ss5000_rabund_percoccur$mean_rabund > 0.001,])
@@ -494,7 +494,7 @@ dim(tp_16mt_e_ss167_cosmop_sorted)
 Proportion of cosmopolitan OTUs (%):
 
 ```{r percentage_cosmopolitan, echo=F}
-(0/3344)*100
+(0/3342)*100
 ```
 
 Number and proportion (%) of rare OTUs:
@@ -504,6 +504,8 @@ dim(tp_16mt_e_ss167_rabund_percoccur[tp_16mt_e_ss167_rabund_percoccur$mean_rabun
  
 (0/3344)*100 # = 29.22% of the OTUs are regionally rare
 ```
+
+We don't detect any instance of rare or cosmopolitan OTUs.
 
 <!---
 ```{r otu_col_chech, echo = T}
