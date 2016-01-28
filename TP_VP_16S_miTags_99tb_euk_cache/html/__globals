@@ -1,0 +1,48 @@
+load_data	<	>	[<-	c	colSums	dim	is.na	MP0317	MP0320	MP0322	MP0536	MP0784	MP0882	MP0884	MP0886	MP1164	MP1166	MP1178	MP1337	MP1413	MP1415	MP1419	MP1523	MP1525	MP1599	MP1639	MP1677	MP1678	MP1679	MP1681	MP1682	MP1849	MP1851	MP1853	MP1879	MP2000	MP2043	MP2235	MP2237	MP2658	MP2817	MP427	MP46	MP464	MP468	MP692	read.table	row.names<-	setwd	subset	which	X123_DCM_0d1.0d2	X125_DCM_0d1.0d2
+starting_dataset	dim	tp_vp_16SmiTags_e_v2
+reads_per_sample_overview1	colSums	min	tp_vp_16SmiTags_e_v2
+reads_per_sample_overview2	colSums	max	tp_vp_16SmiTags_e_v2
+reads_per_sample_overview3	>	colSums	tp_vp_16SmiTags_e_v2	which
+reads_per_sample_overview4	colSums	plot	sort	tp_vp_16SmiTags_e_v2
+species_richness_rarefaction1	library	rrarefy	t	tp_vp_16SmiTags_e_v2
+species_richness_rarefaction2	dim	tp_16mt_e_ss167
+species_richness_rarefaction3	rowSums	tp_16mt_e_ss167
+species_richness_rarefaction4	==	colSums	length	tp_16mt_e_ss167	which
+species_richness_rarefaction5	==	colSums	dim	tp_16mt_e_ss167	which
+shannon_index1	diversity	tp_16mt_e_ss167_no_cero
+shannon_index2	boxplot	plot	sort	tp_16mt_e_ss167_div
+richness_otu_no1	specnumber	tp_16mt_e_ss167_no_cero
+richness_otu_no2	min	OTUs_per_sample_tp_16mt_e_ss167
+richness_otu_no3	max	OTUs_per_sample_tp_16mt_e_ss167
+richness_otu_no4	boxplot	OTUs_per_sample_tp_16mt_e_ss167	plot	sort
+pielou_index_of_evenness1	log	OTUs_per_sample_tp_16mt_e_ss167	tp_16mt_e_ss167_div
+pielou_index_of_evenness2	boxplot	pielou_evenness_tp_16mt_e_ss167	plot	sort
+OTUs_overall_abundance	colSums	head	sort	T	tp_16mt_e_ss167_no_cero
+OTUs_overall_abundance2	colSums	log	plot	sort	T	tp_16mt_e_ss167_no_cero
+radfit	colSums	plot	radfit	tp_vp_16SmiTags_e_v2_t
+preston_model1	colSums	plot	prestonfit	tp_vp_16SmiTags_e_v2_t	veiledspec
+preston_model2	colSums	lines	plot	prestondistr	tp_16mt_e_ss167_prestonfit	tp_vp_16SmiTags_e_v2_t	veiledspec
+rarefraction_curve	
+beta_div1	boxplot	tp_16mt_e_ss167_no_cero	vegdist
+beta_div2	hclust	plot	tp_16mt_e_ss167_no_cero.bray
+monoNMDS	monoMDS	plot	tp_16mt_e_ss167_no_cero.bray
+metaNMDS	metaMDS	plot	tp_16mt_e_ss167_no_cero.bray
+load_geo_data	as.matrix	create.lats	dim	earth.dist	head	library	read.table	row.names	row.names<-	T	tp_16mt_e_ss167_no_cero
+working_datasets1	dim	tp_16mt_e_ss167_no_cero
+working_datasets2	as.matrix
+working_datasets3	dim	geo_distances_TP_16S_e_ss167
+working_datasets4	geo_distances_TP_16S_e_ss167	plot	tp_16mt_e_ss167_no_cero.bray
+mantel_correlogram1	geo_distances_TP_16S_e_ss167	mantel	tp_16mt_e_ss167_no_cero.bray
+mantel_correlogram2	geo_distances_TP_16S_e_ss167	max
+mantel_correlogram3	geo_distances_TP_16S_e_ss167	min
+mantel_correlogram4	geo_distances_TP_16S_e_ss167	mantel.correlog	plot	seq	tp_16mt_e_ss167_no_cero.bray
+OTUs_mean_relative_abund	as.data.frame	colSums	head	rowMeans	t	tp_16mt_e_ss167_no_cero
+OTUs_occurence	>	[<-	as.data.frame	rowSums	str	tp_16mt_e_ss167_no_cero_t.rabund
+merge_rabund_peroccur	c	colnames<-	merge	row.names<-	tp_16mt_e_ss167_no_cero_t.rabund_means	tp_16mt_e_ss167_no_cero_t.rabund_means.occurence_perc
+abund_vs_occurence_table	$	abline	plot	tp_16mt_e_ss167_rabund_percoccur
+abundant_OTUs	>	$	c	dim	order	T	tp_16mt_e_ss167_rabund_percoccur
+abundant_OTUs2	
+select_cosmopolitan	>	$	c	dim	order	T	tp_16mt_e_ss167_rabund_percoccur
+percentage_cosmopolitan	
+rare_OTUs	<	>	$	&	dim	tp_16mt_e_ss167_rabund_percoccur
+otu_col_chech	dim	tp_16mt_e_ss167_rabund_percoccur
